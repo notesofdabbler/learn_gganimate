@@ -5,25 +5,53 @@ output:
     self_contained: no
 ---
 
+I recently watched the 2 part workshop ([part 1](https://www.youtube.com/watch?v=h29g21z0a68), [part 2](https://www.youtube.com/watch?v=0m4yywqNPVY)) on ggplot2 and extensions given by [Thomas Lin Pedersen](https://www.data-imaginist.com/about). First of, it was really nice of Thomas to give the close to 4 hour workshop for the benefit of the community. I personally learnt a lot from it. I wanted to try out [gganimate](https://gganimate.com/index.html) extension that was covered during the workshop. 
+
+There are several resources on the web that show animations/illustrations of proofs of mathematical identities and theorems without words (or close to it). I wanted to take a few of those examples and use gganimate to recreate the illustration. While this exercise may not qualify anywhere close to "useful" or "productive", it was definitely a super "fun" way for me to try out gganimate.
+
 ## Example 1:
 
-$$ \sum_{i = 1}^n(2i - 1) = n^2 $$
-The animated version of the proof is show below:
+This example is taken from [AoPS Online](https://artofproblemsolving.com/wiki/index.php/Proofs_without_words) and the result is that sum of first $n$ odd numbers equals $n^2$.
+$$ 1 + 3 + 5 + \ldots + (2n - 1) = n^2 $$
+The animated version of the proof is show below 
+([R code](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_odds.R), 
+[html file](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_odds.html))
 
-![](figures/sum_of_odds.gif)
+![](https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/sum_of_odds.gif)
 
 ## Example 2:
 
-$$ 1^3 + 2^3 + \ldots + (n-1)^3 + n^3 = (1 + 2 + \ldots + n)^2 $$
-The animated version of the proof is shown below:
+This example is also taken from [AoPS Online](https://artofproblemsolving.com/wiki/index.php/Proofs_without_words) and the result is:
 
-![](figures/sum_of_cubes.gif)
+$$ 1^3 + 2^3 + \ldots + (n-1)^3 + n^3 = (1 + 2 + \ldots + n)^2 $$
+The animated version of the proof is shown below (
+[R code](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_cubes.R),
+[html file](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_cubes.html)):
+
+![](https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/sum_of_cubes.gif)
 
 ## Example 3
 
+This example from [AoPS Online](https://artofproblemsolving.com/wiki/index.php/Proofs_without_words) illustrates the result
+
 $$ \frac{1}{2^2} + \frac{1}{2^4} + \frac{1}{2^6} + \frac{1}{2^8} + \ldots = \frac{1}{3} $$
-![](figures/infinite_series_1.gif)
+The animated version of the proof is shown below (
+[R code](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/infinite_series_1.R),
+[html file](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/infinite_series_1.html)):
+
+![](https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/infinite_series_1.gif)
 
 ## Example 4
 
-![](figures/pythagoras_theorem.gif)
+According to Pythagoras theorem, $$ a^2 + b^2 = c^2 $$
+where $a$, $b$, $c$ are sides of a right angled triangle (with $c$ being the side opposite $90^o$ angle)
+
+There was an illustration of the proof of pythogoras theorem in a [video](https://www.youtube.com/watch?v=T2K11eFepcs) from [echalk](http://www.eChalk.co.uk).
+
+The animated version of the proof is shown below (
+[R code](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/pythagoras_theorem.R),
+[html file](https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/pythagoras_theorem.html))
+
+![](https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/pythagoras_theorem.gif)
+
+In summary, it was great to use gganimate for these animations since it does all the magic with making transitions work nicely.

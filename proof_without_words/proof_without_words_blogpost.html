@@ -122,32 +122,44 @@ $(document).ready(function () {
 </div>
 
 
+<p>I recently watched the 2 part workshop (<a href="https://www.youtube.com/watch?v=h29g21z0a68">part 1</a>, <a href="https://www.youtube.com/watch?v=0m4yywqNPVY">part 2</a>) on ggplot2 and extensions given by <a href="https://www.data-imaginist.com/about">Thomas Lin Pedersen</a>. First of, it was really nice of Thomas to give the close to 4 hour workshop for the benefit of the community. I personally learnt a lot from it. I wanted to try out <a href="https://gganimate.com/index.html">gganimate</a> extension that was covered during the workshop.</p>
+<p>There are several resources on the web that show animations/illustrations of proofs of mathematical identities and theorems without words (or close to it). I wanted to take a few of those examples and use gganimate to recreate the illustration. While this exercise may not qualify anywhere close to “useful” or “productive”, it was definitely a super “fun” way for me to try out gganimate.</p>
 <div id="example-1" class="section level2">
 <h2>Example 1:</h2>
-<p><span class="math display">\[ \sum_{i = 1}^n(2i - 1) = n^2 \]</span> The animated version of the proof is show below:</p>
+<p>This example is taken from <a href="https://artofproblemsolving.com/wiki/index.php/Proofs_without_words">AoPS Online</a> and the result is that sum of first <span class="math inline">\(n\)</span> odd numbers equals <span class="math inline">\(n^2\)</span>. <span class="math display">\[ 1 + 3 + 5 + \ldots + (2n - 1) = n^2 \]</span> The animated version of the proof is show below (<a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_odds.R">R code</a>, <a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_odds.html">html file</a>)</p>
 <div class="figure">
-<img src="figures/sum_of_odds.gif" />
+<img src="https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/sum_of_odds.gif" />
 
 </div>
 </div>
 <div id="example-2" class="section level2">
 <h2>Example 2:</h2>
-<p><span class="math display">\[ 1^3 + 2^3 + \ldots + (n-1)^3 + n^3 = (1 + 2 + \ldots + n)^2 \]</span> The animated version of the proof is shown below:</p>
+<p>This example is also taken from <a href="https://artofproblemsolving.com/wiki/index.php/Proofs_without_words">AoPS Online</a> and the result is:</p>
+<p><span class="math display">\[ 1^3 + 2^3 + \ldots + (n-1)^3 + n^3 = (1 + 2 + \ldots + n)^2 \]</span> The animated version of the proof is shown below ( <a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_cubes.R">R code</a>, <a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/sum_of_cubes.html">html file</a>):</p>
 <div class="figure">
-<img src="figures/sum_of_cubes.gif" />
+<img src="https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/sum_of_cubes.gif" />
 
 </div>
 </div>
 <div id="example-3" class="section level2">
 <h2>Example 3</h2>
-<p><span class="math display">\[ \frac{1}{2^2} + \frac{1}{2^4} + \frac{1}{2^6} + \frac{1}{2^8} + \ldots = \frac{1}{3} \]</span> <img src="figures/infinite_series_1.gif" /></p>
+<p>This example from <a href="https://artofproblemsolving.com/wiki/index.php/Proofs_without_words">AoPS Online</a> illustrates the result</p>
+<p><span class="math display">\[ \frac{1}{2^2} + \frac{1}{2^4} + \frac{1}{2^6} + \frac{1}{2^8} + \ldots = \frac{1}{3} \]</span> The animated version of the proof is shown below ( <a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/infinite_series_1.R">R code</a>, <a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/infinite_series_1.html">html file</a>):</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/infinite_series_1.gif" />
+
+</div>
 </div>
 <div id="example-4" class="section level2">
 <h2>Example 4</h2>
+<p>According to Pythagoras theorem, <span class="math display">\[ a^2 + b^2 = c^2 \]</span> where <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> are sides of a right angled triangle (with <span class="math inline">\(c\)</span> being the side opposite <span class="math inline">\(90^o\)</span> angle)</p>
+<p>There was an illustration of the proof of pythogoras theorem in a <a href="https://www.youtube.com/watch?v=T2K11eFepcs">video</a> from <a href="http://www.eChalk.co.uk">echalk</a>.</p>
+<p>The animated version of the proof is shown below ( <a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/pythagoras_theorem.R">R code</a>, <a href="https://github.com/notesofdabbler/learn_gganimate/blob/master/proof_without_words/pythagoras_theorem.html">html file</a>)</p>
 <div class="figure">
-<img src="figures/pythagoras_theorem.gif" />
+<img src="https://raw.githubusercontent.com/notesofdabbler/learn_gganimate/master/proof_without_words/figures/pythagoras_theorem.gif" />
 
 </div>
+<p>In summary, it was great to use gganimate for these animations since it does all the magic with making transitions work nicely.</p>
 </div>
 
 

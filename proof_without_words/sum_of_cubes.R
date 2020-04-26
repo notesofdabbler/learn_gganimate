@@ -177,7 +177,7 @@ p = ggplot(df_all) + geom_tile(aes(x = x, y = y, fill = bcol), color = "black") 
   theme_void()
 
 
-anim = p + transition_states(state, transition_length = 1, state_length = 2, wrap = FALSE)
+anim = p + transition_states(state, transition_length = 1, state_length = 2)
 animate(anim, renderer = gifski_renderer("figures/sum_of_cubes.gif"))
 
 #+
