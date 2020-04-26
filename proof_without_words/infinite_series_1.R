@@ -45,11 +45,12 @@ p
 
 p = ggplot(df_all) + geom_polygon(aes(x = x, y = y, group = type, fill = fillgrp), color = "black", alpha = 0.5)
 #p = p + scale_fill_manual(values = col_list) + guides(fill = FALSE)
+p = p + geom_text(aes(x = xt, y = yt, label = lbl), fontface = "bold", parse = TRUE)
 p = p + scale_fill_identity() + guides(fill = FALSE)
 p = p + theme_void() 
 anim = p + transition_states(state, transition_length = 2, state_length = 4) +
            shadow_mark()
-animate(anim, renderer = gifski_renderer("infinite_series_1.gif"))
+animate(anim, renderer = gifski_renderer("proof_without_words/figures/infinite_series_1.gif"))
 
 
 
