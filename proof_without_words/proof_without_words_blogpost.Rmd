@@ -2,7 +2,7 @@
 title: "Proof Without Words with gganimate"
 output: 
   html_document:
-            self_contained: no
+    self_contained: no
 ---
 
 ## Example 1:

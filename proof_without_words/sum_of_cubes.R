@@ -1,10 +1,29 @@
+#'---
+#'title: "Proof Without Words with gganimate: Sum of Cubes"
+#'author: "notesofdabbler"
+#'date: Apr 26, 2020
+#'output: html_document
+#'---
+#'
+#' The site [AoPS Online](https://artofproblemsolving.com/wiki/index.php/Proofs_without_words) has
+#' several examples that have illustrations to show proofs without words for several mathematical theorems and identities.
+#' Here I used [gganimate](https://gganimate.com/index.html) to create the illustration for the following result (using the approach in [AoPS Online](https://artofproblemsolving.com/wiki/index.php/Proofs_without_words))
+#' $$ 1^3 + 2^3 + 3^3 + \ldots + n^3 = (1 + 2 + \ldots + n)^2 $$
+#' 
+#' 
 
+#+ setup, include=FALSE
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+
+#+
 library(ggplot2)
 library(gganimate)
 library(ggthemes)
 library(dplyr)
 library(transformr)
 
+#' I created a function to generate block representation of $i^3$
+#+
 get_blocks = function(i, palname = "Blue") {
   
   if(i %% 2 == 1) {
@@ -45,6 +64,24 @@ get_blocks = function(i, palname = "Blue") {
   return(dfL)
 }
 
+#' A static plot of blocks generate for $1^3, 2^3, 3^3, 4^3, 5^3$ is shown below
+#+
+df_base = tibble(x = 1, y = 1, bcol = "black", xt = -2, yt = 1, lbl = "1^3")
+
+df = bind_rows(df_base, get_blocks(2, "Blue"), 
+               get_blocks(3, "Red"), 
+               get_blocks(4, "Orange"), 
+               get_blocks(5, "Purple"))
+
+p = ggplot(df) + geom_tile(aes(x = x, y = y, fill = bcol), color = "black") +
+  scale_fill_identity() + 
+  geom_text(aes(x = xt, y = yt, label = lbl), fontface = "bold", size = 5, parse = TRUE) +
+  theme_void()
+p
+
+#' The blocks generate for $i^3$ can be rearranged in an alternate manner (which helps to show the identity). I
+#' created a function to take the blocks generated for $i^3$ and rearrange them
+#+
 get_shifted_blocks = function(blocks) {
   
   dfL = blocks
@@ -95,19 +132,8 @@ get_shifted_blocks = function(blocks) {
   
 }
 
-df_base = tibble(x = 1, y = 1, bcol = "black", xt = -2, yt = 1, lbl = "1^3")
-
-df = bind_rows(df_base, get_blocks(2, "Blue"), 
-                        get_blocks(3, "Red"), 
-                        get_blocks(4, "Orange"), 
-                        get_blocks(5, "Purple"))
-
-p = ggplot(df) + geom_tile(aes(x = x, y = y, fill = bcol), color = "black") +
-    scale_fill_identity() + 
-    geom_text(aes(x = xt, y = yt, label = lbl), fontface = "bold", size = 5, parse = TRUE) +
-    theme_void()
-p
-
+#' A static plot of rearragend blocks generated for $1^3, 2^3, 3^3, 4^3, 5^3$ is shown below
+#+
 df = bind_rows(tibble(x = 1, y = 1, bcol = "black"), get_shifted_blocks(get_blocks(2, "Blue")), 
                get_shifted_blocks(get_blocks(3, "Red")),
                get_shifted_blocks(get_blocks(4, "Orange")),
@@ -115,9 +141,13 @@ df = bind_rows(tibble(x = 1, y = 1, bcol = "black"), get_shifted_blocks(get_bloc
                )
 
 p = ggplot(df) + geom_tile(aes(x = x, y = y, fill = bcol), color = "black") +
-  scale_fill_identity()
+  scale_fill_identity() + theme_void()
 p
 
+#' To enable an animation to, I created a sequence of dataframes where
+#' each state rearranges blocks for a particular $i^3$
+#' 
+#+
 df1 = bind_rows(df_base, get_blocks(2, "Blue"), 
                get_blocks(3, "Red"), 
                get_blocks(4, "Orange"), 
@@ -148,5 +178,7 @@ p = ggplot(df_all) + geom_tile(aes(x = x, y = y, fill = bcol), color = "black") 
 
 
 anim = p + transition_states(state, transition_length = 1, state_length = 2, wrap = FALSE)
-animate(anim, renderer = gifski_renderer("sum_of_cubes.gif"))
+animate(anim, renderer = gifski_renderer("figures/sum_of_cubes.gif"))
 
+#+
+sessionInfo()
