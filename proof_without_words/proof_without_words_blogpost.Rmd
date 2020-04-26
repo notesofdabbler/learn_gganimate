@@ -1,0 +1,18 @@
+---
+title: "Proof Without Words with gganimate"
+output: html_document
+---
+
+## Example 1:
+
+$$ \sum_{i = 1}^n(2i - 1) = n^2 $$
+The animated version of the proof is show below:
+
+![](sum_of_odds.gif)
+
+## Example 2:
+
+$$ 1^3 + 2^3 + \ldots + (n-1)^3 + n^3 = (1 + 2 + \ldots + n)^2 $$
+The animated version of the proof is shown below:
+
+![](sum_of_cubes.gif)
